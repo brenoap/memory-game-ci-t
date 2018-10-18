@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html ng-app="memoryGameCITApp">
+<head>
+    <meta charset="UTF-8">
+    <title>Memory Game for CI&T</title>
+    <link rel="stylesheet" href="css/app.css">
+    <script src="libraries/angular/angular.js"></script>
+    <script src="javascript/app.js"></script>
+    <script src="javascript/game.js"></script>
+</head>
+
+<body ng-controller="MemoryGameControl">
+    <table>
+        <tr ng-repeat="row in memoryGame.matrix">
+            <td ng-repeat="tile in row" ng-click="memoryGame.cardFlip(tile)">
+                <div class="container">
+                    <div class="card" ng-class="{flipped: tile.cardFlipped}">
+                        <img class="front" ng-src="img/pokeball.png">
+                        <img class="back" ng-src="img/{{tile.cardTitle}}.png">
+                    </div>
+                </div>
+            </td>
+        </tr>
+    </table>
+
+    <div style="width: 100%; overflow: hidden;">
+        <div style="width: 150px; float: left;">
+            <h4>Plays</h4>
+            <h4>{{memoryGame.plays}}</h4>
+        </div>
+        <div style="margin-left: 350px;">
+            <h4>Points</h4>
+            <h4>{{memoryGame.points}}</h4>
+        </div>
+    </div>
+
+</body>
+
+</html>
