@@ -14,18 +14,19 @@
 </head>
 
 <body>
-    <div ng-controller="MemoryGameControl">
+    <div ng-controller="MemoryGameControl"> <!-- Change to PlayerController -->
         <label>Player Name:</label>
         <input type="text" ng-model="playerDto.playerName" class="input-sm spacing"/>
         <button ng-click="savePlayer()" class="btn btn-sm btn-info">Save Player</button>
     </div>
     <hr/>
+
     <div ng-controller="MemoryGameControl" style="margin-left: 40px;">
         <table>
             <tr ng-repeat="row in memoryGame.matrix">
                 <td ng-repeat="tile in row" ng-click="memoryGame.cardFlip(tile)">
-                    <div class="container">
-                        <div class="card" ng-class="{flipped: tile.cardFlipped}">
+                    <div class="container" >
+                        <div class="card" style="width: 95px;" ng-class="{flipped: tile.cardFlipped}" >
                             <img class="front" ng-src="img/pokeball.png">
                             <img class="back" ng-src="img/{{tile.cardTitle}}.png">
                         </div>
