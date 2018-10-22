@@ -1,4 +1,4 @@
-Memory Game for CI&T
+Simple Memory Game
 ====================
 
 ## Description
