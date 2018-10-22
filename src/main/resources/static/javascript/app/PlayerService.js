@@ -14,4 +14,5 @@ angular.module('memoryGame.services', []).factory('PlayerService',
 				return $http.post(CONSTANTS.savePlayer, playerDto);
 			}
 			return service;
-		} ]);
+		}
+]);

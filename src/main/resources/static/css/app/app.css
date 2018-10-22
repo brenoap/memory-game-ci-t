@@ -48,8 +48,6 @@ div {
   backface-visibility: hidden;
 }
 
-
-
 .card .back {
   background: blue;
   -webkit-transform: rotateY( 180deg );
@@ -62,4 +60,24 @@ div {
 .message {
   width: 660px;
   text-align: left;
+}
+
+body{
+    background-color: #efefef;
+}
+
+span.spacing{
+    margin-right: 10px;
+}
+
+input.custom-width{
+    width: 200px;
+}
+
+input.spacing{
+    margin-right: 5px;
+}
+
+input.left.spacing{
+    margin-left: 1px;
 }

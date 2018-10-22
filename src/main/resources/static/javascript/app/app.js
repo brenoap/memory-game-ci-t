@@ -1,17 +1,16 @@
 'use strict';
 
-var memoryGameCITApp = angular.module('memoryGameCITApp', ['ui.bootstrap', 'demo.controllers',
-                                                           		'demo.services']);
-
-memoryGameCITApp.factory('memoryGame', function() {
-    var tileNames = ['bulbasaur', 'charmander', 'squirtle', 'pikachu', 'eevee', 'chikorita', 'cyndaquil', 'mudkip'];
-    return new MemoryGame(tileNames)
-});
+var memoryGameCITApp = angular.module('memoryGameCITApp', []);
 
 memoryGameCITApp.constant("CONSTANTS", {
 	getPlayerByIdUrl : "/player/getPlayer/",
 	getAllPlayers : "/player/getAllPlayers",
 	savePlayer : "/player/savePlayer"
+});
+
+memoryGameCITApp.factory('memoryGame', function() {
+    var tileNames = ['bulbasaur', 'charmander', 'squirtle', 'pikachu', 'eevee', 'chikorita', 'cyndaquil', 'mudkip'];
+    return new MemoryGame(tileNames)
 });
 
 memoryGameCITApp.controller('MemoryGameControl', function MemoryGameControl($scope, memoryGame){
@@ -32,3 +31,4 @@ memoryGameCITApp.directive('memoryGameCard', function() {
         }
     }
 });
+
