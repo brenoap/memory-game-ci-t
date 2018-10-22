@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html ng-app="memoryGameCITApp">
+<head>
+    <meta charset="UTF-8">
+    <title>Memory Game for CI&T</title>
+</head>
+<body ng-controller="PlayerController">
+    <div class="row">
+        <label>Player</label> <input type="text" ng-model="playerDto.playerName" class="input-sm spacing"/>
+        <button ng-click="savePlayer()" class="btn btn-sm btn-info">Save Player</button>
+    </div>
+    <table>
+        <tr ng-repeat="row in memoryGame.matrix">
+            <td ng-repeat="tile in row" ng-click="memoryGame.cardFlip(tile)">
+                <div class="container">
+                    <div class="card" ng-class="{flipped: tile.cardFlipped}">
+                        <img class="front" ng-src="../img/pokeball.png">
+                        <img class="back" ng-src="../img/{{tile.cardTitle}}.png">
+                    </div>
+                </div>
+            </td>
+        </tr>
+    </table>
+
+    <div style="width: 100%; overflow: hidden;">
+        <div style="width: 150px; float: left;">
+            <h4>Plays</h4>
+            <h4>{{memoryGame.plays}}</h4>
+        </div>
+        <div style="margin-left: 350px;">
+            <h4>Points</h4>
+            <h4>{{memoryGame.points}}</h4>
+        </div>
+    </div>
+
+</body>
+<script src="javascript/lib/angular.min.js"></script>
+<script src="javascript/lib/ui-bootstrap-tpls-2.5.0.min.js"></script>
+<script src="javascript/app/app.js"></script>
+<script src="javascript/app/PlayerController.js"></script>
+<script src="javascript/app/PlayerService.js"></script>
+<link rel="stylesheet" href="css/lib/bootstrap.min.css"/>
+<link rel="stylesheet" href="css/app/app.css"/>
+</html>
